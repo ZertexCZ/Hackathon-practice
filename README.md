@@ -1,2 +1,12 @@
 # Hackathon-practice
 PGV Lesson 23092026
+
+## Pohotovost v Karlovarském kraji (`pohotovost/`)
+
+Static web app: pick a town and a day to see which adult, children's, dental and pharmacy emergency services are on duty. Each result shows the address, phone, hours, open/closed status and a map pin.
+
+**Running it:** open `pohotovost/index.html` in any browser. It needs no npm, server or build step, and you can copy the folder to any computer. The map tiles (OpenStreetMap) need internet. Everything else works offline.
+
+- `js/data.js`: local mock of the dataset *Lékařská a lékárenská pohotovostní služba v Karlovarském kraji* (8 towns, WGS84). It is a `.js` file because browsers block `fetch()` of local JSON over `file://`.
+- `js/schedule.js`: the rule engine. It handles Czech public holidays (including Easter), Mon–Fri vs Sat/Sun/holiday hours, the daily dental rotation between Karlovy Vary and Sokolov, shifts past midnight, open-now status and the nearest on-duty site.
+- `js/app.js`: UI, Leaflet map and the 7-day schedule. Leaflet is bundled in `lib/leaflet/`.

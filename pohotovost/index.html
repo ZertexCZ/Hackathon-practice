@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pohotovost Karlovarský kraj</title>
+  <meta name="description" content="Kde je dnes lékařská, dětská, zubní a lékárenská pohotovost v Karlovarském kraji.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c8102e'/%3E%3Cpath d='M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#results">Přeskočit na výsledky</a>
+
+  <div class="emergency" role="note">
+    <strong>Ohrožení života?</strong> Nečekejte na pohotovost – volejte
+    <a href="tel:155">155</a> (záchranka) nebo <a href="tel:112">112</a>.
+  </div>
+
+  <header class="top">
+    <div class="wrap">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7"/><path d="M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z"/></svg>
+        </span>
+        <div>
+          <h1>Pohotovost v Karlovarském kraji</h1>
+          <p class="sub">Kdo dnes slouží – lékař pro dospělé, pro děti, zubař a lékárna</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls" aria-label="Výběr města a dne">
+      <div class="field">
+        <span class="label" id="town-label">Město</span>
+        <div class="chips" id="towns" role="radiogroup" aria-labelledby="town-label"></div>
+      </div>
+      <div class="field-row">
+        <label class="field">
+          <span class="label">Den</span>
+          <input type="date" id="date">
+        </label>
+        <div class="quick">
+          <button type="button" class="btn ghost" id="btn-today">Dnes</button>
+          <button type="button" class="btn ghost" id="btn-tomorrow">Zítra</button>
+          <button type="button" class="btn ghost" id="btn-locate" title="Vybrat nejbližší město podle polohy">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7" fill="none"/></svg>
+            Moje poloha
+          </button>
+        </div>
+      </div>
+      <p class="dayinfo" id="dayinfo" aria-live="polite"></p>
+    </section>
+
+    <div class="layout">
+      <section id="results" class="cards" aria-live="polite"></section>
+      <aside class="mapbox">
+        <div id="map" role="region" aria-label="Mapa pohotovostí"></div>
+        <p class="mapnote" id="mapnote" hidden>Mapové podklady se nenačetly (bez internetu). Adresy a telefony fungují i offline.</p>
+        <ul class="legend" aria-label="Legenda mapy">
+          <li><i class="dot adult"></i>Dospělí</li>
+          <li><i class="dot child"></i>Děti</li>
+          <li><i class="dot dental"></i>Zubní</li>
+          <li><i class="dot pharmacy"></i>Lékárna</li>
+          <li><i class="dot town"></i>Vybrané město</li>
+        </ul>
+      </aside>
+    </div>
+
+    <section class="week" aria-labelledby="week-h">
+      <h2 id="week-h">Rozpis na 7 dní</h2>
+      <p class="muted">Nejbližší sloužící pracoviště pro vybrané město. Zubní pohotovost se po dnech střídá mezi Karlovými Vary a Sokolovem.</p>
+      <div class="tablewrap"><table id="week"></table></div>
+    </section>
+
+    <footer class="foot">
+      <p><strong>Ukázková data.</strong> Rozpisy vycházejí ze struktury datové sady
+        „Lékařská a lékárenská pohotovostní služba v Karlovarském kraji“ (Krajský úřad Karlovarského kraje, WGS 1984),
+        jména lékařů a některé údaje jsou smyšlené. Před cestou si službu vždy ověřte telefonicky.</p>
+      <p id="sources"></p>
+    </footer>
+  </main>
+
+  <script src="lib/leaflet/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/schedule.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
