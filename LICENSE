@@ -1,3 +1,29 @@
+=== ČESKY ===
+
+Copyright (c) 2026 Petr Kaločay. Všechna práva vyhrazena.
+
+Tento repozitář a veškerý jeho obsah (zdrojový kód, data, design, texty
+a dokumentace) jsou chráněny. Nikomu se neuděluje žádná licence ani svolení
+jakoukoli část tohoto repozitáře, zcela ani zčásti, užívat, kopírovat,
+upravovat, spojovat, zveřejňovat, šířit, sublicencovat, prodávat, vytvářet
+z ní odvozená díla nebo ji jinak využívat k jakémukoli účelu bez předchozího
+výslovného písemného svolení autora.
+
+Prohlížení tohoto repozitáře na GitHubu ani jeho forkování v rámci GitHubu,
+jak to umožňují podmínky služby GitHub, neuděluje žádná další práva.
+
+OBSAH JE POSKYTOVÁN „TAK, JAK JE“, BEZ JAKÉKOLI ZÁRUKY. PROJEKT SLOUŽÍ POUZE
+K TESTOVACÍM ÚČELŮM A NESMÍ SE NA NĚJ SPOLÉHAT JAKO NA ZDROJ ZDRAVOTNICKÝCH
+NEBO POHOTOVOSTNÍCH INFORMACÍ.
+
+Komponenty třetích stran se na toto ujednání nevztahují a řídí se vlastními
+licencemi:
+  - pohotovost/lib/leaflet/  Leaflet 1.9.4, licence BSD 2-Clause
+    (viz pohotovost/lib/leaflet/LICENSE)
+
+
+=== ENGLISH ===
+
 Copyright (c) 2026 Petr Kaločay. All rights reserved.
 
 This repository and all of its contents (source code, data, design, text and
